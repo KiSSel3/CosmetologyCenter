@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <p>Logged out!</p>
+
+  <a href="{% url 'doctors:login'%}">Click here to login again.</a>
+{% endblock %}

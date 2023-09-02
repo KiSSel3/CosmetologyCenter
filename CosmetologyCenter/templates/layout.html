@@ -17,6 +17,12 @@
                     <li style="display: inline;"><a href="#">Контакты</a></li>
                     <li style="display: inline;"><a href="#">Отзывы</a></li>
                     <li style="display: inline;"><a href="#">Дополнительно</a></li>
+
+                    {% if user.is_authenticated %}
+                    <li style="display: inline;"><a href="{% url 'doctors:logout'%}?next={{request.path}}">Выйти</a></li>
+                    {% else %}
+                    <li style="display: inline;"><a href="{% url 'doctors:login'%}?next={{request.path}}">Войти</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </header>
