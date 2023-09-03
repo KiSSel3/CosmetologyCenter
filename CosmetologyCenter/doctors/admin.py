@@ -4,4 +4,8 @@ from .models import DoctorCategories, Doctor
 
 # Register your models here.
 admin.site.register(DoctorCategories)
-admin.site.register(Doctor)
+
+
+@admin.register(Doctor)
+class DoctorAdmin(admin.ModelAdmin):
+    list_display = ('user', 'last_name', 'first_name', 'work_experience')

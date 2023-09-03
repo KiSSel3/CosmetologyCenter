@@ -14,12 +14,15 @@ class Service(models.Model):
     image = models.ImageField(upload_to='images', blank=True, null=True)
 
 
+    class Meta:
+        ordering = ["service_name"]
+
     def __str__(self):
         return self.service_name
 
 
-    # def get_absolute_url(self):
-    #     return reverse('service-detail-view', args=[str(self.id)])
+    def get_absolute_url(self):
+        return reverse('services:service-detail', args=[str(self.id)])
 
 
 class ServiceType(models.Model):

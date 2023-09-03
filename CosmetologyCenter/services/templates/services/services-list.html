@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Services Page</title>
+{% endblock %}
+
+{% block main %}
+<ul>
+    {% for service in services %}
+    <li>
+        <img src="{{ service.image.url }}" style="width: 500px; height: 300px;">
+        <h3>{{ service.service_name }}</h3>
+        <p>{{ service.service_type }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
