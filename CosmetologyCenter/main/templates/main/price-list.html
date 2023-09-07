@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div>
+  <h1>Прайс-лист</h1>
+  {% for service_type, services in services_by_type.items %}
+    <details>
+      <summary>{{ service_type.designation }}</summary>
+      <ul>
+        {% for service in services %}
+          <li><a href="{% url 'services:service-detail' service.id %}">{{ service.service_name }}</a>  {{ service.price }} руб</li>
+        {% endfor %}
+      </ul>
+    </details>
+  {% endfor %}
+</div>
+{% endblock %}

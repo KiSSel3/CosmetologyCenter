@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="service-details"  style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 32em;">
+    <h1>{{ service.service_name }}</h1>
+    <p>Тип: {{ service.service_type }}</p>
+    <p>Кабинет: {{ service.office }}</p>
+    <p>Доктор: {{ service.doctor }}</p>
+    <p>Цена: ${{ service.price }}</p>
+    {% if service.image %}
+      <img src="{{ service.image.url }}" alt="{{ service.service_name }}" width="300em" height="200em">
+    {% endif %}
+</div>
+{% endblock %}

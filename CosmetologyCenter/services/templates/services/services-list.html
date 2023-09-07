@@ -5,13 +5,16 @@
 {% endblock %}
 
 {% block main %}
-<ul>
+<ul style="list-style-type: none;">
     {% for service in services %}
-    <li>
-        <img src="{{ service.image.url }}" style="width: 500px; height: 300px;">
-        <h3>{{ service.service_name }}</h3>
-        <p>{{ service.service_type }}</p>
-    </li>
+    <div class="service-details" style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 32em;">
+        <li>
+            <img src="{{ service.image.url }}" style="width: 500px; height: 300px;">
+            <h3>{{ service.service_name }}</h3>
+            <p>{{ service.service_type }}</p>
+            <a href="{% url 'services:service-detail' service.id %}">Подробнее</a>
+        </li>
+    </div>
     {% endfor %}
 </ul>
 {% endblock %}

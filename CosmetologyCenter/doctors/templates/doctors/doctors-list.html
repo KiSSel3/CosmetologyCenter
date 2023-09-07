@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Doctors Page</title>
+{% endblock %}
+
+{% block main %}
+<ul style="list-style-type: none;">
+    {% for doctor in doctors %}
+    <div class="doctor-details"  style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 25em;">
+        <li>
+            <img src="{{ doctor.image.url }}" style="width: 400px; height: 400px;">
+            <h3>{{ doctor.last_name }} {{ doctor.first_name }}</h3>
+            <a href="{% url 'doctors:doctor-detail' doctor.id %}">Подробнее</a>
+        </li>
+    </div>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -13,6 +13,7 @@ class Service(models.Model):
 
     image = models.ImageField(upload_to='images', blank=True, null=True)
 
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     class Meta:
         ordering = ["service_name"]

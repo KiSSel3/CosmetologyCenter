@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="doctor-details"  style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 25em;">
+    <h1>{{ doctor.first_name }} {{ doctor.last_name }}</h1>
+    <p>Категории: {{ doctor.category.all|join:", " }}</p>
+    <p>Опыт работы: {{ doctor.work_experience }}</p>
+    {% if doctor.image %}
+        <img src="{{ doctor.image.url }}" alt="{{ doctor.first_name }} {{ doctor.last_name }}" style="max-width: 400px; max-height: 400px;">
+    {% endif %}
+</div>
+{% endblock %}

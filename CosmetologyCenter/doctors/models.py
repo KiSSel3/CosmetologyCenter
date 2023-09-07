@@ -12,6 +12,7 @@ class Doctor(models.Model):
 
     work_experience = models.IntegerField(help_text="Enter work experience")
 
+    image = models.ImageField(upload_to='images', blank=True, null=True)
 
     class Meta:
         ordering = ["last_name", "first_name"]

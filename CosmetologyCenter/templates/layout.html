@@ -12,8 +12,9 @@
             <nav>
                 <ul>
                     <li style="display: inline;"><a href="{% url 'main:home' %}">Главная</a></li>
-                    <li style="display: inline;"><a href="#">Сотрудники</a></li>
+                    <li style="display: inline;"><a href="{% url 'doctors:doctors-list' %}">Сотрудники</a></li>
                     <li style="display: inline;"><a href="{% url 'services:services-list' %}">Услуги</a></li>
+                    <li style="display: inline;"><a href="{% url 'main:price-list' %}">Прайс-лист</a></li>
                     <li style="display: inline;"><a href="#">О компании</a></li>
                     <li style="display: inline;"><a href="#">Контакты</a></li>
                     <li style="display: inline;"><a href="#">Отзывы</a></li>
@@ -21,6 +22,7 @@
 
                     {% if user.is_authenticated %}
                     <li style="display: inline;"><a href="{% url 'doctors:logout'%}?next={{request.path}}">Выйти</a></li>
+                    <li style="display: inline;"><a href="#">Профиль</a></li>
                     {% else %}
                     <li style="display: inline;"><a href="{% url 'doctors:login'%}?next={{request.path}}">Войти</a></li>
                     {% endif %}
