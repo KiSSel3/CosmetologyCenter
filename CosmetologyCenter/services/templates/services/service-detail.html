@@ -10,5 +10,11 @@
     {% if service.image %}
       <img src="{{ service.image.url }}" alt="{{ service.service_name }}" width="300em" height="200em">
     {% endif %}
+
+    <form method="post" action="{% url 'cart:add_to_cart' service.id %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Добавить в корзину</button>
+  </form>
 </div>
 {% endblock %}

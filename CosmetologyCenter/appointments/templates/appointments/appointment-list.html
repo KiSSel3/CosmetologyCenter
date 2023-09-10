@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<h1>Список записей:</h1>
+<ul>
+    {% for appointment in appointments %}
+    <li>{{ appointment.client.user.username }} - {{ appointment.appointmentItem.datetime }}</li>
+    {% endfor %}
+</ul>
+<form method="get" action="{% url 'appointments:create_appointment_item' %}">
+    <button type="submit">Добавить время для записи</button>
+</form>
+{% endblock %}

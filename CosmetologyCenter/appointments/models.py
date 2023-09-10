@@ -12,7 +12,8 @@ class Appointment(models.Model):
 
 class AppointmentItem(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
-    datetime = models.DateTimeField()
+    date = models.DateField(default=None)
+    time = models.TimeField(default=None)
 
     def __str__(self):
-        return f"{self.datetime.hour}:{self.datetime.minute}  {self.datetime.day}.{self.datetime.month}"
+        return f"{self.date} {self.time}"

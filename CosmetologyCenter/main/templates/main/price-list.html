@@ -8,7 +8,7 @@
       <summary>{{ service_type.designation }}</summary>
       <ul>
         {% for service in services %}
-          <li><a href="{% url 'services:service-detail' service.id %}">{{ service.service_name }}</a>  {{ service.price }} руб</li>
+          <li><a href="{% url 'services:service-detail' service.id %}">{{ service.service_name }}</a>  ${{ service.price }}</li>
         {% endfor %}
       </ul>
     </details>

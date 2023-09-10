@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<h1>Ваша корзина</h1>
+
+<table class="cart" width="100%">
+    <thead>
+        <tr>
+            <th>Услуга</th>
+            <th>Дата</th>
+            <th>Время</th>
+            <th>Цена</th>
+            <th>Удаление</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart %}
+        <tr>
+            <td>{{ item.service.service_name }}</td>
+            <td>{{ item.date }}</td>
+            <td>{{ item.time }}</td>
+            <td class="num">${{ item.service.price }}</td>
+            <td><a href="{% url 'cart:cart_remove' item.id %}">Удалить</a></td>
+        </tr>
+        {% endfor %}
+        <tr class="total">
+            <td>Total</td>
+            <td colspan="5"></td>
+            <td class="num">
+                ${{ cart.get_total_price|floatformat:"2" }}
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

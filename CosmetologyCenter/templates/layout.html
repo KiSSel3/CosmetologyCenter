@@ -4,31 +4,33 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/layout.css'%}"/>
+
         {% block head %}{% endblock %}
     </head>
 
     <body>
-        <header>
-            <nav>
-                <ul>
-                    <li style="display: inline;"><a href="{% url 'main:home' %}">Главная</a></li>
-                    <li style="display: inline;"><a href="{% url 'doctors:doctors-list' %}">Сотрудники</a></li>
-                    <li style="display: inline;"><a href="{% url 'services:services-list' %}">Услуги</a></li>
-                    <li style="display: inline;"><a href="{% url 'main:price-list' %}">Прайс-лист</a></li>
-                    <li style="display: inline;"><a href="#">О компании</a></li>
-                    <li style="display: inline;"><a href="#">Контакты</a></li>
-                    <li style="display: inline;"><a href="#">Отзывы</a></li>
-                    <li style="display: inline;"><a href="#">Дополнительно</a></li>
-
-                    {% if user.is_authenticated %}
-                    <li style="display: inline;"><a href="{% url 'doctors:logout'%}?next={{request.path}}">Выйти</a></li>
-                    <li style="display: inline;"><a href="#">Профиль</a></li>
-                    {% else %}
-                    <li style="display: inline;"><a href="{% url 'doctors:login'%}?next={{request.path}}">Войти</a></li>
-                    {% endif %}
-                </ul>
-            </nav>
-        </header>
+        <div class="sidebar">
+            <ul>
+                <li><a href="{% url 'main:home' %}">Главная</a></li>
+                <li><a href="{% url 'doctors:doctors-list' %}">Сотрудники</a></li>
+                <li><a href="{% url 'services:services-list' %}">Услуги</a></li>
+                <li><a href="{% url 'main:price-list' %}">Прайс-лист</a></li>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Отзывы</a></li>
+                <li><a href="{% url 'cart:cart_details' %}">Корзина</a></li>
+                <li><a href="#">Дополнительно</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'appointments:appointment_list_for_user' %}">Записи</a></li>
+                <li><a href="{% url 'doctors:logout'%}?next={{request.path}}">Выйти</a></li>
+                {% else %}
+                <li><a href="{% url 'doctors:login'%}?next={{request.path}}">Войти</a></li>
+                {% endif %}
+            </ul>
+        </div>
 
         <main>
             {% block main %} {% endblock %}

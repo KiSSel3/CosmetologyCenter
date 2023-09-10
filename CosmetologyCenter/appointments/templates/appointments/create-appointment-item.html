@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<h1>Создать запись на услугу</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Создать</button>
+</form>
+{% endblock %}
