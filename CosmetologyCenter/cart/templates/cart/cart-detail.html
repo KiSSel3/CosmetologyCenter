@@ -30,6 +30,12 @@
                 ${{ cart.get_total_price|floatformat:"2" }}
             </td>
         </tr>
-    </tbody>
+    </tbody>    
 </table>
+
+<hr>
+<form method="post" action="{% url 'appointments:create_appointments' %}">
+    {% csrf_token %}
+    <button type="submit">Записаться</button>
+</form>
 {% endblock %}

@@ -2,11 +2,30 @@
 
 {% block main %}
 <h1>Список записей:</h1>
-<ul>
-    {% for appointment in appointments %}
-    <li>{{ appointment.client.user.username }} - {{ appointment.appointmentItem.datetime }}</li>
-    {% endfor %}
-</ul>
+
+<table width="100%">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Дата и Время</th>
+            <th>Кабинет</th>
+            <th>Услуга</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ appointment.client.first_name }}</td>
+            <td>{{ appointment.client.last_name }}</td>
+            <td>{{ appointment.appointmentItem }}</td>
+            <td>{{ appointment.appointmentItem.service.office }}</td>
+            <td>{{ appointment.appointmentItem.service.service_name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>    
+</table>
+
 <form method="get" action="{% url 'appointments:create_appointment_item' %}">
     <button type="submit">Добавить время для записи</button>
 </form>

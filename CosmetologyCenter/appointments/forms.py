@@ -2,7 +2,7 @@ from django import forms
 from .models import AppointmentItem
 from services.models import Service
 from main.models import Client
-import datetime
+
 
 class AppointmentItemForm(forms.ModelForm):
     class Meta:

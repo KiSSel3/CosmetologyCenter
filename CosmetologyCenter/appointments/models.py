@@ -15,5 +15,8 @@ class AppointmentItem(models.Model):
     date = models.DateField(default=None)
     time = models.TimeField(default=None)
 
+    class Meta:
+        ordering = ["date", "time"]
+
     def __str__(self):
         return f"{self.date} {self.time}"

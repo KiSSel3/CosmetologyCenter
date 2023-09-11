@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<h1>Заполните информацию о себе</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Записаться</button>
+</form>
+{% endblock %}
