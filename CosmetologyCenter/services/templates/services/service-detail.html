@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block head %}
+<title>{{ service.service_name }}</title>
+{% endblock %}
+
 {% block main %}
 <div class="service-details"  style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 32em;">
     <h1>{{ service.service_name }}</h1>

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {%for f in form%}
+    <p><label for="{{f.id_for_label}}">{{f.label}}: </label>{{f}}</p>
+    <div>{{f.errors}}</div>
+    {%endfor%}
+    <input type="submit" value="Оставить отзыв" >
+</form>
+{% endblock %}

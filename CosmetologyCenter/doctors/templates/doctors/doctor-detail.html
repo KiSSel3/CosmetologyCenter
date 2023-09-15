@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block head %}
+<title>{{ doctor.last_name }}</title>
+{% endblock %}
+
 {% block main %}
 <div class="doctor-details"  style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 25em;">
     <h1>{{ doctor.first_name }} {{ doctor.last_name }}</h1>

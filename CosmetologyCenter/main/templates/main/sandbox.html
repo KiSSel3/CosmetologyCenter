@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>Новости</title>
+{% endblock %}
+
+{% block main %}
+{%if user.is_authenticated%}
+<h3>Joke 4u - {{joke}} </h3>
+<a href="{{dog}}" target="_blank">Dog is here</a>
+{%endif%}
+
+<pre>
+    <code>
+        def hello_world():
+            print("Hello, World!")
+    </code>
+</pre>
+
+<!-- Сокращения -->
+<abbr title="Hypertext Markup Language">HTML</abbr>
+
+<!-- Определения -->
+<dl>
+    <dt>HTML</dt>
+    <dd>Язык гипертекстовой разметки</dd>
+</dl>
+
+<!-- Цитата -->
+<blockquote>
+    Это цитата известного человека.
+</blockquote>
+
+<!-- Дата и время -->
+<p>Текущая дата и время: <time datetime="2023-09-22T14:30:00Z">22 сентября 2023, 14:30</time></p>
+
+<!-- Текст в виде четверостишия -->
+<pre>
+    Розы красные,
+    Виолетты синие.
+    Этот текст четверостишия,
+    Здесь и сейчас в лучшем стиле.
+</pre>
+
+<a href="https://www.example.com">Обычная ссылка</a>
+<a href="https://www.example.com" download>Ссылка для скачивания</a>
+{%endblock%}

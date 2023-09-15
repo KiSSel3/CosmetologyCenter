@@ -7,4 +7,53 @@
 
 {% block main %}
 <h1>Главная страница</h1>
+
+<ul style="list-style-type: none;">
+    <div class="news" style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 32em; margin-bottom: 50px;">
+        <li>
+            <h1>Последняя актуальная новость:</h1>
+            <h2>{{news.title}}</h2>
+            <h3>{{news.essence}}</h3>
+            <img src="{{news.photo.url}}" width="300em" height="200em">
+            <a href="{% url 'main:news' %}">Показать больше</a>
+        </li>
+    </div>
+</ul>
+
+
+<ul style="list-style-type: none;">
+    {% for service in services %}
+    <div class="service-details" style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 32em; margin-bottom: 50px;">
+        <li>
+            <h1>Многиее выбирают:</h1>
+            <img src="{{ service.image.url }}" style="width: 500px; height: 300px;">
+            <h3>{{ service.service_name }}</h3>
+            <p>{{ service.service_type }}</p>
+            <a href="{% url 'services:service-detail' service.id %}">Подробнее</a>
+        </li>
+    </div>
+    {% endfor %}
+</ul>
+
+<h1>Партнеры</h1>
+
+<ul style="padding-left: 0; margin-left: 0; list-style-type: none;">
+    <li style="display: inline-block; margin-right: 10px;">
+
+        <figure>
+            <p><img src="../media/images/DocDoc.png" alt="DocDoc" width="50em" height="50em"></p>
+            <figcaption> <a href="https://docdoc.ru/clinic/spec/kosmetologiya"
+                    target="_blank">DocDoc</a></figcaption>
+        </figure>
+
+    </li>
+    <li style="display: inline-block; margin-right: 10px;">
+        <figure>
+            <p><img src="../media/images/SM-Estetica.png" alt="SM-Estetica" width="50em" height="50em"></p>
+            <figcaption> <a href="https://www.sm-estetica.ru/"
+                    target="_blank">SM-Estetica</a></figcaption>
+        </figure>
+
+    </li>   
+</ul>
 {% endblock %}

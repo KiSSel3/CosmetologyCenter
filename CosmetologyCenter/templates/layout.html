@@ -8,6 +8,8 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/layout.css'%}"/>
 
+        <link rel="icon" href="../media/images/lotus.png" type="image/x-icon">
+
         {% block head %}{% endblock %}
     </head>
 
@@ -18,11 +20,10 @@
                 <li><a href="{% url 'doctors:doctors-list' %}">Сотрудники</a></li>
                 <li><a href="{% url 'services:services-list' %}">Услуги</a></li>
                 <li><a href="{% url 'main:price-list' %}">Прайс-лист</a></li>
-                <li><a href="#">О компании</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="{% url 'main:about' %}">О компании</a></li>
                 <li><a href="#">Отзывы</a></li>
                 <li><a href="{% url 'cart:cart_details' %}">Корзина</a></li>
-                <li><a href="#">Дополнительно</a></li>
+                <li><a href="{% url 'main:sandbox' %}">Дополнительно</a></li>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'appointments:appointment_list_for_user' %}">Записи</a></li>
                 <li><a href="{% url 'doctors:logout'%}?next={{request.path}}">Выйти</a></li>
@@ -37,7 +38,20 @@
         </main>
 
         <footer>
-
+            <footer style="padding-top: 200px;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center;">
+                    <p>Since <time datetime="2023-09-02">September 2nd 2023</time>
+                    </p>
+                    <p>&copy; 2023 Автосалон MyAutoShow</p>
+                    <nav class="menu">
+                        <ul style="padding-left: 0; margin-left: 0; list-style: none;">
+                            <li style="display: inline; margin-right: 10px;"><a href="{%url 'main:FAQ'%}">Словарь терминов и понятий</a></li>
+                            <li style="display: inline;"><a href="{% url 'main:privacy_policy'%}">Политика конфиденциальности</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </footer>
         </footer>
     </body>
 </html>

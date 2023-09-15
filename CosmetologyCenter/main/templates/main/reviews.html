@@ -1,0 +1,17 @@
+{% extends "base.html" %} 
+
+{% block head %}
+<title>Отзывы</title>
+{% endblock %}
+
+{% block main %}
+
+<h1>Отзывы</h1>
+<a href="{% url 'main:create_review' %}">Оставить свой отзыв</a>
+{%for r in reviews%}
+<h2>{{r.author}}</h2>
+<h3>{{r.text}}</h3>
+<h4>Оценка: {{r.rating}}</h4>
+<h4>Добавлен: {{r.date_added}}</h4>
+{%endfor%}
+{%endblock%}

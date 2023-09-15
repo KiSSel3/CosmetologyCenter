@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>FAQ</title>
+{% endblock %}
+
+{% block main %}
+
+<h1>Часто Задаваемые Вопросы</h1>
+
+<ul>
+    {%for F in faq%}
+    <li>
+        <details>
+            <summary>
+                <p> <strong>{{F.question}}</strong></p>
+            </summary>
+            <p>{{F.answer}}</p>
+            <p>Добавлено: {{F.date_added}}</p>
+        </details>
+
+    </li>
+
+    {%endfor%}
+
+</ul>
+{% endblock %}

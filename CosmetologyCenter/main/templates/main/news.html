@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>Новости</title>
+{% endblock %}
+
+{% block main %}
+<section>
+  {% for new in news%}
+  <article class="news" style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 32em;">
+    <h2>{{new.title}}</h2>
+    <h4>{{new.essence}}</h4>
+    <img src="{{new.photo.url}}" width="300em" height="200em">
+    <details>
+      <summary>
+        Читать больше...
+      </summary>
+      {{new.description}}
+    </details>
+  </article>
+  {%endfor%}
+</section>
+<div style="margin-bottom: 30px;"></div>
+{%endblock%}
