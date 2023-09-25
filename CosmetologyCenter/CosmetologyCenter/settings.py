@@ -36,6 +36,7 @@ CART_SESSION_ID = 'cart'
 INSTALLED_APPS = [
     'main',
     'cart',
+    'stats',
     'doctors',
     'services',
     'appointments',
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 ]
 
 MIDDLEWARE = [
@@ -144,3 +146,44 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Настройки логирования
+LOGGING_DIR = os.path.join(BASE_DIR, 'logs')  # Путь к папке с логами
+if not os.path.exists(LOGGING_DIR):
+    os.makedirs(LOGGING_DIR)
+
+LOGGING_LEVEL = 'INFO'  # Уровень логирования (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': LOGGING_LEVEL,
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(LOGGING_DIR, 'debug.log'),
+            'formatter': 'verbose',
+        },
+    },
+    'root': {
+        'handlers': ['file'],
+        'level': LOGGING_LEVEL,
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': LOGGING_LEVEL,
+            'propagate': True,
+        },
+    },
+}

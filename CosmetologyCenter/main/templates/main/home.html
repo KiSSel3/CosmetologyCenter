@@ -57,3 +57,13 @@
     </li>   
 </ul>
 {% endblock %}
+
+{% block aside %}
+<div class="sidebar-banners">
+    {% for banner in banners %}
+        <a href="{{ banner.target_url }}">
+            <img src="{{ banner.image.url }}" alt="{{ banner }}" width="300em" height="200em" />
+        </a>
+    {% endfor %}
+</div>
+{% endblock %}

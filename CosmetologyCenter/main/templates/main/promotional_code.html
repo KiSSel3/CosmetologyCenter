@@ -1,0 +1,25 @@
+{% extends "layout.html" %} 
+
+{% block head %}
+<title>FAQ Page</title>
+{% endblock %}
+
+{% block main %}
+
+<h1>Действующие промокоды:</h1>
+{%for p in actual_promotional_code%}
+
+<h3>{{p.value}} - {{p.discount}}%</h3>
+
+{%endfor%}
+<a href="../media/images/promo.txt" download>Скачать список актуальных
+    промокодов</a>
+
+<h1>Промокоды в архиве:</h1>
+{%for p in archive_promotional_code%}
+
+<h3>{{p.value}} - {{p.discount}}%</h3>
+
+{%endfor%}
+
+{%endblock%}

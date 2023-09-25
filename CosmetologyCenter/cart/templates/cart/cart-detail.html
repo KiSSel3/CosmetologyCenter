@@ -38,8 +38,18 @@
 </table>
 
 <hr>
-<form method="post" action="{% url 'appointments:create_appointments' %}">
+<form method="post" action="{% url 'appointments:create_appointments' %}" id="appointmentForm">
     {% csrf_token %}
-    <button type="submit">Записаться</button>
+    <button type="button" id="ageConfirmationButton">Записаться</button>
 </form>
+
+<script>
+    document.getElementById("ageConfirmationButton").addEventListener("click", function () {
+        var result = confirm("Подтвердите, что вам 18 лет или старше.");
+        if (result === true) {
+            document.getElementById("appointmentForm").submit();
+        }
+    });
+</script>
 {% endblock %}
+

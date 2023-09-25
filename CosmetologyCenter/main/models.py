@@ -57,3 +57,31 @@ class Review(models.Model):
 
     def __str__(self):
         return f'{self.text}'
+
+
+class Banner(models.Model):
+    image = models.ImageField(upload_to='images')
+    target_url = models.URLField()
+
+    def __str__(self):
+        return f"Banner for {self.target_url}"
+
+
+class Job(models.Model):
+    type_of_job = models.CharField(max_length=70, help_text='Enter type of ypor job')
+    description = models.TextField(help_text="Enter description", default="")
+    is_actual = models.BooleanField(help_text="Is actual?", default=True)
+
+    def __str__(self):
+        return self.type_of_job
+
+
+class Promotional_code(models.Model):
+    value = models.TextField(help_text="Enter promocode")
+    is_actual = models.BooleanField(default=True)
+    discount = models.IntegerField(help_text="Enter discount from 1 to 25", default=10, validators=[
+        MinValueValidator(1, message="The number cannot be less than 1"),
+        MaxValueValidator(25, message="The number cannot be more than 25")])
+
+    def __str__(self):
+        return self.value

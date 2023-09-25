@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчет по статистике</title>
+</head>
+<body>
+    <h1>Отчет по статистике</h1>
+
+    <h2>Средний возраст клиентов: {{ average_age }}</h2>
+    <h2>Медианный возраст клиентов: {{ median_age }}</h2>
+
+    <!-- Гистограмма распределения сумм продаж -->
+    <h2>Распределение сумм продаж</h2>
+    <img src="data:image/png;base64,{{ image_base64_hist }}" alt="Распределение сумм продаж">
+
+    <a href="{% url 'main:home' %}">Вернуться на главную</a>
+</body>
+</html>

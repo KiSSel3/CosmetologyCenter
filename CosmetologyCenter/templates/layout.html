@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Kiselev Andrey">
+        <meta name="description"
+            content="Косметологический центр предоставляет широкий круг услуг">
+        <meta name="keywords"
+            content="красота, здоровье, центр">
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/layout.css'%}"/>
 
@@ -21,37 +24,40 @@
                 <li><a href="{% url 'services:services-list' %}">Услуги</a></li>
                 <li><a href="{% url 'main:price-list' %}">Прайс-лист</a></li>
                 <li><a href="{% url 'main:about' %}">О компании</a></li>
-                <li><a href="#">Отзывы</a></li>
+                <li><a href="{% url 'main:rewiews' %}">Отзывы</a></li>
                 <li><a href="{% url 'cart:cart_details' %}">Корзина</a></li>
+                <li><a href="{% url 'main:promotional_code' %}">Промокоды</a></li>
+                <li><a href="{% url 'main:vacancies' %}">Вакансии</a></li>
                 <li><a href="{% url 'main:sandbox' %}">Дополнительно</a></li>
+                <li><a href="{% url 'stats:report' %}">Статистика</a></li>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'appointments:appointment_list_for_user' %}">Записи</a></li>
-                <li><a href="{% url 'doctors:logout'%}?next={{request.path}}">Выйти</a></li>
+                <li><a href="{% url 'doctors:logout' %}">Выйти</a></li>
                 {% else %}
                 <li><a href="{% url 'doctors:login'%}?next={{request.path}}">Войти</a></li>
                 {% endif %}
             </ul>
         </div>
 
+        <aside style="position: fixed; top: 0; right: 0; width: 300px; padding: 50px;">
+            {% block aside %} {% endblock %}
+        </aside>
+
         <main>
             {% block main %} {% endblock %}
         </main>
 
-        <footer>
-            <footer style="padding-top: 200px;">
-                <div
-                    style="display: flex; justify-content: space-between; align-items: center;">
-                    <p>Since <time datetime="2023-09-02">September 2nd 2023</time>
-                    </p>
-                    <p>&copy; 2023 Автосалон MyAutoShow</p>
-                    <nav class="menu">
-                        <ul style="padding-left: 0; margin-left: 0; list-style: none;">
-                            <li style="display: inline; margin-right: 10px;"><a href="{%url 'main:FAQ'%}">Словарь терминов и понятий</a></li>
-                            <li style="display: inline;"><a href="{% url 'main:privacy_policy'%}">Политика конфиденциальности</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </footer>
+        <footer style="position: fixed; bottom: 0; width: 100%; background-color: #f0f0f0; padding-top: 5px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p>Since <time datetime="2023-09-02">September 2nd 2023</time></p>
+                <p>&copy; 2023 Косметологический центер CosmetologyCenter</p>
+                <nav class="menu">
+                    <ul style="padding-left: 0; margin-left: 0; list-style: none;">
+                        <li style="display: inline; margin-right: 10px;"><a href="{%url 'main:FAQ'%}">Словарь терминов и понятий</a></li>
+                        <li style="display: inline;"><a href="{% url 'main:privacy_policy'%}">Политика конфиденциальности</a></li>
+                    </ul>
+                </nav>
+            </div>
         </footer>
     </body>
 </html>

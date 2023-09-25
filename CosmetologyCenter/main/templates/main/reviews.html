@@ -1,4 +1,4 @@
-{% extends "base.html" %} 
+{% extends "layout.html" %} 
 
 {% block head %}
 <title>Отзывы</title>
@@ -7,7 +7,7 @@
 {% block main %}
 
 <h1>Отзывы</h1>
-<a href="{% url 'main:create_review' %}">Оставить свой отзыв</a>
+<a href="{% url 'main:create_rewiew' %}">Оставить свой отзыв</a>
 {%for r in reviews%}
 <h2>{{r.author}}</h2>
 <h3>{{r.text}}</h3>

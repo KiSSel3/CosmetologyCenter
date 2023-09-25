@@ -1,0 +1,17 @@
+{% extends "layout.html" %} 
+
+{% block head %}
+<title>Vacancies Page</title>
+{% endblock %}
+
+{% block main %}
+
+<h1>Актуальные вакансии</h1>
+
+{%for v in vacancies%}
+
+<h3>{{v.type_of_job}}</h3>
+<h4>{{v.description}}</h4>
+
+{%endfor%}
+{%endblock%}
