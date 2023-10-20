@@ -1,17 +1,20 @@
-{% extends "layout.html" %} 
+{% extends 'layout.html' %}
+
+{% load static %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static 'css/main/job.css'%}"/>
+
 <title>Vacancies Page</title>
 {% endblock %}
 
 {% block main %}
-
-<h1>Актуальные вакансии</h1>
-
-{%for v in vacancies%}
-
-<h3>{{v.type_of_job}}</h3>
-<h4>{{v.description}}</h4>
-
-{%endfor%}
+<div class="vacancies-content">
+    <h1>Актуальные вакансии</h1>
+    {% for v in vacancies %}
+    <h3>{{ v.type_of_job }}</h3>
+    <h4>{{ v.description }}</h4>
+    <div class="clear"></div> 
+    {% endfor %}
+</div>
 {%endblock%}

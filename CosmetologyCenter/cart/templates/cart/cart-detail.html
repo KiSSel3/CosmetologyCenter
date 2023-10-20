@@ -1,6 +1,10 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
+
+{% load static %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static 'css/cart/cart-detail.css'%}"/>
+
 <title>Корзина</title>
 {% endblock %}
 

@@ -1,24 +1,24 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
 
-{% block title %}
-<title>Services Page</title>
-{% endblock %}
+{% load static %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static 'css/services/services-list.css'%}"/>
+
 <title>Услуги</title>
 {% endblock %}
 
 {% block main %}
-<ul style="list-style-type: none;">
-    {% for service in services %}
-    <div class="service-details" style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 32em;">
-        <li>
-            <img src="{{ service.image.url }}" style="width: 500px; height: 300px;">
-            <h3>{{ service.service_name }}</h3>
-            <p>{{ service.service_type }}</p>
-            <a href="{% url 'services:service-detail' service.id %}">Подробнее</a>
-        </li>
-    </div>
-    {% endfor %}
-</ul>
+<div class="main-content">
+    <ul class="services">
+        {% for service in services %}
+            <li>
+                <img src="{{ service.image.url }}" style="width: 500px; height: 300px;">
+                <h3>{{ service.service_name }}</h3>
+                <p>{{ service.service_type }}</p>
+                <a href="{% url 'services:service-detail' service.id %}">Подробнее</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}

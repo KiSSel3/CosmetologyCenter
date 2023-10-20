@@ -1,0 +1,148 @@
+ul {
+    list-style-type: none;
+}
+
+.news {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    width: 32em;
+    position: relative;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.5);
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.news h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.news h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.news h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.news img {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.news a, .service-details a {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.news a:hover, .service-details a:hover {
+    background-color: gray;
+}
+
+.service-list {
+    margin-left: -40px;
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr); 
+    gap: 20px;
+}
+
+.service-details {
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.5);
+    padding: 20px;
+}
+
+.service-details img {
+    width: 415px;
+    height: 255px;
+}
+
+.partners-list {
+    padding-left: 0;
+    margin-left: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.partner-block {
+    border-radius: 50%; 
+    width: 150px;
+    height: 150px; 
+    background-color: #333; 
+    margin-right: 10px;
+    overflow: hidden; 
+    background-color: rgba(128, 128, 128, 0.5); 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.partner-block img {
+    max-width: 100%;
+    height: auto;
+}
+
+.partner-block a {
+    color: #fff; 
+    text-decoration: none;
+    padding: 5px;
+    position: absolute; 
+    bottom: 10px; 
+    left: 0; 
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease;
+    font-kerning: normal; 
+}
+
+.partner-block:hover a {
+    background-color: rgba(61, 61, 61, 0.9); 
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.sidebar-banners {
+    position: absolute;
+    top: 180px;
+    right: 40px;
+}
+
+.sidebar-banners a {
+    display: block;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    font-size: 24px; 
+    color: #333; 
+    text-decoration: none;
+}
+
+.sidebar-banners a:hover {
+    transform: scale(1.2) rotate(360deg);
+    animation: spin 2s linear infinite, bounce 0.5s ease infinite;
+    color: #ff5733;
+}

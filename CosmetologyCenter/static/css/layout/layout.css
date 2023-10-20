@@ -1,0 +1,116 @@
+body {
+    background-image: url("https://oir.mobi/uploads/posts/2021-03/1616970663_27-p-fon-dlya-saita-besshovnii-30.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+    font-family: 'sans-serif';
+    letter-spacing: 0.5px;
+    word-spacing: 3px;
+    line-height: 130%;
+    font-variant: small-caps;
+    word-wrap: break-word;
+}
+
+aside {
+    border-radius: 10px;
+    width: 20vh;
+    height: 88%;
+    float: left;
+    position: fixed;
+    padding: 20px;
+    background-color: rgba(128, 128, 128, 0.5);
+    text-shadow: 2px 2px 4px rgba(53, 4, 82, 0.5);
+    font-weight: bold;
+}
+  
+aside ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+  
+aside li {
+  margin-bottom: 10px; /* Отступ между элементами меню */
+}
+  
+aside a:link {
+  color: #ff0000; 
+  text-decoration: none; 
+}
+
+aside a:visited {
+  color: #551a8b; 
+  text-decoration:none;
+}
+
+aside a:hover {
+  color: #ff6600;
+  text-decoration:none;
+}
+
+aside a:active {
+  color: #7d0075; 
+}
+
+aside a:focus {
+  outline: 2px solid #551a8b;
+  border-radius: 5px; 
+}
+
+main {
+    margin-left: 25vh; /* Отступ слева, чтобы основной контент был справа от sidebar */
+    padding: 20px; /* Отступы внутри main */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    text-align: center; /* Выравнивание текста и элементов по центру */
+}
+
+footer div {
+    display: flex;
+    justify-content: center; /* Горизонтальное центрирование содержимого */
+    align-items: center;
+}
+
+footer p {
+    margin: 0; /* Уберет внешние отступы для абзаца */
+}
+
+footer span {
+    font-weight: bold;
+}
+
+footer ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Горизонтальное центрирование элементов списка */
+}
+
+footer li {
+    margin: 0 10px; /* Добавляет отступы между элементами списка */
+    display: inline;
+}
+
+footer a {
+    color: #551a8b;
+    text-decoration:none;
+}
+
+footer a:hover {
+    color: #ff6600;
+    text-decoration:none;
+}
+
+*::selection {
+    background-color: #551a8b;
+    color: #f0f0f0;
+}
+
+#sandbox {
+    cursor: default;
+}

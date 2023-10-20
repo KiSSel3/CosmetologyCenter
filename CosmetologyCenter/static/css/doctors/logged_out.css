@@ -1,0 +1,22 @@
+.logout p {
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+    background-color: #f2f2f2;
+    color: #73076e;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.logout a {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #d3d3d3;
+  color: #73076e;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+}  

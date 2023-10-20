@@ -1,17 +1,29 @@
-{% extends "layout.html" %} 
+{% extends "layout.html" %}
+
+{% load static %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static 'css/main/reviews.css'%}"/>
+
 <title>Отзывы</title>
 {% endblock %}
 
 {% block main %}
-
-<h1>Отзывы</h1>
-<a href="{% url 'main:create_rewiew' %}">Оставить свой отзыв</a>
-{%for r in reviews%}
-<h2>{{r.author}}</h2>
-<h3>{{r.text}}</h3>
-<h4>Оценка: {{r.rating}}</h4>
-<h4>Добавлен: {{r.date_added}}</h4>
-{%endfor%}
+<div class="main-content">
+    <a class="leave-review-button" href="{% url 'main:create_rewiew' %}">Оставить свой отзыв</a>
+    <div class="review-list">
+        <h1>Отзывы</h1>
+        {% for r in reviews %}
+        <div class="review">
+            <h2 class="review-author">{{ r.author }}</h2>
+            <h3 class="review-text">{{ r.text }}</h3>
+            <div class="review-meta">
+                <h4 class="review-rating">Оценка: {{ r.rating }}</h4>
+                <h4 class="review-date">Добавлен: {{ r.date_added }}</h4>
+            </div>
+        </div>
+        <hr class="review-divider">
+        {% endfor %}
+    </div>
+</div>
 {%endblock%}

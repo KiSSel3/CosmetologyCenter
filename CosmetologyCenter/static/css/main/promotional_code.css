@@ -1,0 +1,33 @@
+.promo-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 20px;
+}
+
+.promo-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color:black;
+}
+
+.promo-container h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    color: rgba(62, 62, 62);
+}
+
+.promo-container a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: rgba(62, 64, 62);    
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+.promo-container a:hover {
+    background-color: darkgrey; 
+}

@@ -1,19 +1,23 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
+
+{% load static %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static 'css/main/news.css'%}"/>
+
 <title>Новости</title>
 {% endblock %}
 
 {% block main %}
 <section>
   {% for new in news%}
-  <article class="news" style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 32em;">
+  <article>
     <h2>{{new.title}}</h2>
-    <h4>{{new.essence}}</h4>
-    <img src="{{new.photo.url}}" width="300em" height="200em">
+    <h4 class="short-description">{{new.essence}}</h4>
+    <img src="{{new.photo.url}}">
     <details>
       <summary>
-        Читать больше...
+       больше
       </summary>
       {{new.description}}
     </details>
@@ -21,4 +25,4 @@
   {%endfor%}
 </section>
 <div style="margin-bottom: 30px;"></div>
-{%endblock%}
+{% endblock %}

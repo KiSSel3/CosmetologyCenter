@@ -1,0 +1,43 @@
+form body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+form label {
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+
+form input[type="text"],
+form textarea {
+    font-family: 'Young Serif', serif;
+    font-size: 16px;
+    padding: 5px;
+}
+
+form input[required],
+form textarea[required] {
+    border:3px solid #ff0000; 
+}
+
+form input:disabled,
+form textarea:disabled {
+    background-color: #eee; 
+}
+
+form input[type="submit"] {
+    background-color: black;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Pixelify Sans', cursive;
+
+}
+
+form input[type="submit"]:hover {
+    background-color: grey;
+}

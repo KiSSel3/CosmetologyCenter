@@ -1,7 +1,15 @@
 {% extends "layout.html" %}
 
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/doctors/logged_out.css'%}"/>
+{% endblock %} 
+
 {% block main %}
+<div class="logout">
   <p>Logged out!</p>
 
   <a href="{% url 'doctors:login'%}">Click here to login again.</a>
+</div>
 {% endblock %}

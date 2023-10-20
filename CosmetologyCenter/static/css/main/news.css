@@ -1,0 +1,59 @@
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  article {
+    width: calc(45% - 20px);
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: white;
+    overflow: hidden;
+  }
+  
+  article h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  article h2::first-letter {
+    color: red;
+  }
+
+  article h2::selection {
+    color: red;
+  }
+  article details summary:after {
+    content: "..."
+  }
+  article details summary:before {
+    content: "Читать"
+  }
+  article h4 {
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    margin-bottom: 10px;
+  }
+  
+  article img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  article details {
+    cursor: pointer;
+  }
+  
+  article details summary {
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  article details p {
+    margin-top: 10px;
+  }

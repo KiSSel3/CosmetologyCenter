@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
+
+ul {
+    list-style-type: none;
+}
+
+#about {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+#about h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#about dfn {
+    font-style: italic;
+    color: rgb(0, 0, 255);
+
+}
+
+#about dfn a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#history {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+#history h2 {
+    font-size: 24px;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#history p {
+    font-size: 18px;
+    color: #7f7c7c;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+#contacts {
+    font-family: 'Pixelify Sans', cursive;
+    font-family: 'Young Serif', serif;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+#contacts strong {
+    font-weight: bold;
+    color: #7f7c7c;
+}
+
+#contacts p:first-child {
+    font-size: 18px;
+    color: #7f7c7c;
+    margin-top: 10px;
+}
+
+#contacts p:nth-child(2), #contacts p:nth-child(3) {
+    font-size: 18px;
+    color: black;
+}
+
+#contacts h2, #contacts ul:first-child {
+    font-size: 24px;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#contacts ul:first-child {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#contacts ul:first-child li a {
+    font-size: 18px;
+    color: #7f7c7c;
+    text-decoration: none;
+}
+
+#contacts h2 + ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#contacts h2 + ul li {
+    font-size: 18px;
+    color: #7f7c7c;
+    margin-top: 10px;
+}
+
+iframe {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 14px #000;
+}
+
+@keyframes customAnimation {
+    0% {
+        transform: scale(1) scaleZ(1.0) rotateX(0deg) rotateY(0deg);
+        transform-origin: 0% 34%;
+        perspective: 0;
+        perspective-origin: 0% 0%;
+    }
+    50% {
+        transform: scale(1.4) scaleZ(1.0) rotateX(360deg) rotateY(9deg);
+        transform-origin: 0% 34%;
+        perspective: 450;
+        perspective-origin: 80% 32%;
+    }
+    100% {
+        transform: scale(1) scaleZ(1.0) rotateX(0deg) rotateY(0deg);
+        transform-origin: 0% 34%;
+        perspective: 0;
+        perspective-origin: 0% 0%;
+    }
+}
+
+.logo-img {
+    animation: customAnimation 5s linear infinite;
+    height: 150px;
+    width: 150px;
+    
+}
+
+#certificate * {
+    font-family: 'IBM Plex Serif', serif;
+}
+
+.certificate {
+    width: 700px;
+    height: auto;
+
+    padding: 45px;
+
+    border-image-source: url("https://clipart-library.com/2023/decorative-frame-background-blue-vintage-flower-design-vector_53876-157569.jpg");
+    border-image-slice: 99;
+    border-image-width: 45px;
+    border-image-repeat: round;
+
+    background-image: url("https://phonoteka.org/uploads/posts/2021-04/1618401784_31-phonoteka_org-p-fon-dlya-sertifikata-42.jpg");
+    background-size: contain;
+
+    text-align: center;
+
+    margin: 50px 20px;
+}
+
+.certificate h1 {
+    text-transform: uppercase;
+    background: repeating-linear-gradient(rgb(0, 39, 178), rgb(0, 39, 178) 1px, #ff7676 2px, #ff7676 3px);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #000000;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.pechat {
+    width: 120px;
+    height: auto;
+
+    position: relative;
+    left: -270px;
+    z-index: 0;
+}
+
+.podpis {
+    width: 180px;
+    height: auto;
+
+    position: relative;
+    left: -70px;
+    bottom: -20px;
+    z-index: 1;
+}
+
+.facsimilie {
+    display: inline-block;
+}
+
+.upoln {
+    text-align: left;
+    padding: 10px 30px 10px;
+    display: inline-block;
+}
+
+.podtverzdenie {
+    padding: 70px 20px 40px 20px;
+}
+
+.off-data {
+    padding-top: 150px;
+}
+
+.podtverzdenie a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 800;
+}

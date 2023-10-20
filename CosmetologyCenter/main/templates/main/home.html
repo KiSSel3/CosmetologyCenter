@@ -1,6 +1,10 @@
 {% extends 'layout.html' %}
 
+{% load static %}
+
 {% block head %}
+<link rel="stylesheet" href="{% static 'css/main/home.css'%}"/>
+
 <title>Главная страница</title>
 {% endblock %}
 
@@ -8,57 +12,51 @@
 {% block main %}
 <h1>Главная страница</h1>
 
-<ul style="list-style-type: none;">
-    <div class="news" style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 32em; margin-bottom: 50px;">
-        <li>
-            <h1>Последняя актуальная новость:</h1>
-            <h2>{{news.title}}</h2>
-            <h3>{{news.essence}}</h3>
-            <img src="{{news.photo.url}}" width="300em" height="200em">
-            <a href="{% url 'main:news' %}">Показать больше</a>
-        </li>
-    </div>
-</ul>
+<h2>Последняя актуальная новость:</h2>
 
+<div class="news">
+    <h2>{{news.title}}</h2>
+    <h3>{{news.essence}}</h3>
+    <img src="{{news.photo.url}}" width="500em" height="300em">
+    <a href="{% url 'main:news' %}">Показать больше</a>
+</div>
 
-<ul style="list-style-type: none;">
+<h2>Многиее выбирают:</h2>
+
+<ul class="service-list">
     {% for service in services %}
-    <div class="service-details" style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; padding: 20px; width: 32em; margin-bottom: 50px;">
+    <div class="service-details">
         <li>
-            <h1>Многиее выбирают:</h1>
-            <img src="{{ service.image.url }}" style="width: 500px; height: 300px;">
+            <img src="{{ service.image.url }}">
             <h3>{{ service.service_name }}</h3>
-            <p>{{ service.service_type }}</p>
             <a href="{% url 'services:service-detail' service.id %}">Подробнее</a>
         </li>
     </div>
     {% endfor %}
 </ul>
 
-<h1>Партнеры</h1>
+<h2>Партнеры:</h2>
 
-<ul style="padding-left: 0; margin-left: 0; list-style-type: none;">
-    <li style="display: inline-block; margin-right: 10px;">
+<ul class="partners-list">
+    <li class="partner-block">
 
         <figure>
-            <p><img src="../media/images/DocDoc.png" alt="DocDoc" width="50em" height="50em"></p>
+            <p><img src="../media/images/DocDoc.png" alt="DocDoc" width="70em" height="70em"></p>
             <figcaption> <a href="https://docdoc.ru/clinic/spec/kosmetologiya"
                     target="_blank">DocDoc</a></figcaption>
         </figure>
 
     </li>
-    <li style="display: inline-block; margin-right: 10px;">
+    <li class="partner-block">
         <figure>
-            <p><img src="../media/images/SM-Estetica.png" alt="SM-Estetica" width="50em" height="50em"></p>
+            <p><img src="../media/images/SM-Estetica.png" alt="SM-Estetica" width="80em" height="80em"></p>
             <figcaption> <a href="https://www.sm-estetica.ru/"
                     target="_blank">SM-Estetica</a></figcaption>
         </figure>
 
     </li>   
 </ul>
-{% endblock %}
 
-{% block aside %}
 <div class="sidebar-banners">
     {% for banner in banners %}
         <a href="{{ banner.target_url }}">

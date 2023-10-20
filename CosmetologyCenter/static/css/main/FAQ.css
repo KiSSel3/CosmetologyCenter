@@ -1,0 +1,67 @@
+.faq-content {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.faq-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.faq-content details {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.faq-content summary {
+    background-color: #f5f5f5;
+    padding: 15px;
+    cursor: pointer;
+    position: relative;
+    list-style: none;
+}
+
+.faq-content summary::after {
+    content: "▼"; 
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+}
+
+.faq-content details[open] summary::after {
+    content: "▲"; 
+    transform: translateY(-50%) rotate(180deg);
+}
+
+
+.faq-content summary p {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.faq-content details p {
+    margin: 10px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    color: #666;
+}
+
+
+.faq-content details p:last-child {
+    border: none;
+}

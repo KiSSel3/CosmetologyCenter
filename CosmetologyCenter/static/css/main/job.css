@@ -1,0 +1,37 @@
+.vacancies-content {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.vacancies-content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.vacancies-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
+
+.vacancies-content h4 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #666;
+}
+
+.vacancies-content h3,
+.vacancies-content h4 {
+    float: left;
+    width: 50%; 
+    box-sizing: border-box; 
+}
+
+.clear {
+    clear: both;
+}

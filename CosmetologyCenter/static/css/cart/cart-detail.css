@@ -1,0 +1,48 @@
+/* Убрать двойные линии между ячейками внутри таблицы */
+table {
+    border-collapse: collapse;
+  }
+  
+  /* Изменить фон в пустых ячейках */
+  td.empty {
+    background-color: #eee;
+  }
+  
+  /* Оформить заголовок таблицы над таблицей */
+  table.cart {
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Применить горизонтальное и вертикальное выравнивание информации в ячейках и настроить расположение таблицы на странице */
+  table.cart th, table.cart td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  table.cart {
+    margin: 0 auto;
+  }
+
+  table.cart th {
+    background-color: #ddd;
+    font-weight: bold;
+  }
+  
+  table.cart tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  table.cart td:first-child, table.cart td:last-child {
+    border-radius: 5px;
+  }
+  
+  table.cart td.num {
+    text-align: right;
+  }
+  
+  table.cart tr.total td {
+    background-color: #f00;
+    color: #fff;
+  }
+  

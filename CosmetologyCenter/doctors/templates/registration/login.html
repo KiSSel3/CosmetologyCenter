@@ -1,9 +1,15 @@
 {% extends "layout.html" %}
 
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/doctors/login.css'%}"/>
+{% endblock %} 
+
 {% block main %}
 
 {% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
+  <p class="error">Your username and password didn't match. Please try again.</p>
 {% endif %}
 
 <form method="post" action="{% url 'doctors:login' %}">

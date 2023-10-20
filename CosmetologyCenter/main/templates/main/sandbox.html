@@ -1,6 +1,10 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
+
+{% load static %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static 'css/main/sandbox.css'%}"/>
+
 <title>Новости</title>
 {% endblock %}
 
@@ -16,24 +20,28 @@
             print("Hello, World!")
     </code>
 </pre>
-
 <!-- Сокращения -->
 <abbr title="Hypertext Markup Language">HTML</abbr>
+
+ <!-- Определение -->
+<dfn title="Это определение HTML">HTML</dfn> - это язык разметки документов.
+
 <!-- Словарь-->
 <dl>
-    <dt>HTML</dt>
-    <dd>Язык гипертекстовой разметки</dd>
+  <dt>HTML</dt>
+  <dd>Язык гипертекстовой разметки</dd>
 </dl>
 
 <!-- Цитата -->
 <blockquote>
-    Это цитата известного человека.
+  Это цитата известного человека.
 </blockquote>
 
 <q>Цитата</q>
 
 <!-- Дата и время -->
-<p>Текущая дата и время: <time datetime="2023-09-22T14:30:00Z">22 сентября 2023, 14:30</time></p>
+<p>Текущая дата и время: <time datetime="2023-09-22T14:30:00Z">22 сентября 2023,
+    14:30</time></p>
 
 <!-- Текст в виде четверостишия -->
 <pre>
@@ -42,19 +50,87 @@
     Этот текст четверостишия,
     Здесь и сейчас в лучшем стиле.
 </pre>
+<!-- Навигация горизонтальная -->
+<nav>
+  <ul>
+    <li><a href="#">Главная</a></li>
+    <li><a href="#">О нас</a></li>
+    <li><a href="#">Контакты</a></li>
+  </ul>
+</nav>
 
-<a href="https://www.example.com">Обычная ссылка</a>
-<a href="https://www.example.com" download>Ссылка для скачивания</a>
+<!-- Ссылки -->
+<p>
+  <a href="https://www.example.com">Внешняя ссылка</a><br>
+  <a href="#anchor">Якорь</a><br>
+  <a href="document.pdf" download>Скачать <wbr> документ</a>
+</p>
 
+<!-- Форма -->
+<form action="submit.php" method="post">
+  <label for="name">Имя:</label>
+  <input type="text" id="name" name="name" required>
+  <br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <br>
+
+  <label for="message">Сообщение:</label>
+  <textarea id="message" name="message" rows="4" required></textarea>
+  <br>
+
+  <input type="submit" value="Отправить">
+</form>
+
+<!-- Изображения -->
+<img src="responsive-image.jpg" alt="Адаптивное изображение"
+  srcset="responsive-image.jpg 800w, responsive-image-small.jpg 400w">
+
+<!-- Видео -->
+<video controls>
+  <source src="video.mp4" type="video/mp4">
+  Ваш браузер не поддерживает видео.
+</video>
+
+<!-- Аудио -->
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg">
+  Ваш браузер не поддерживает аудио.
+</audio>
 
 <article itemscope itemtype="http://schema.org/Article">
-    <h1 itemprop="name">Немного о Microdata</h1>
-    <meta itemprop="inLanguage" content="ru" /> 
-    <section itemprop="articleBody">
-      Скажи рекурсии «нет»!
-    </section>
-    <section itemprop="author" itemscope itmetype="http://schema.org/Person">
-      <span itemprop="additionalName">VlAleVas</span>
-    </section>
-  </article>
+  <h1 itemprop="name">Немного о Microdata</h1>
+  <meta itemprop="inLanguage" content="ru" />
+  <section itemprop="articleBody">
+    Скажи рекурсии «нет»!
+  </section>
+  <section itemprop="author" itemscope itmetype="http://schema.org/Person">
+    <span itemprop="additionalName">VlAleVas</span>
+  </section>
+</article>
+
+<h1>Заголовок</h1>
+<p>Это обычный текст.</p>
+<p>Это текст с красной строкой.</p>
+<p>Это текст с межстрочным интервалом.</p>
+<p>Это текст с капителью.</p>
+<p>Это текст с интервалом между словами и символами.</p>
+<p>Это текст с переносом и разрывом слов.</p>
+
+<form action="#">
+  <input type="text" name="name" placeholder="Введите имя">
+  <input type="email" name="email" placeholder="Введите email">
+  <input type="submit" value="Отправить">
+</form>
+
+<p>Это цитата на английском языке:</p>
+<q lang="en">
+  The quick brown fox jumps over the lazy dog.
+</q>
+
+<p>Это цитата на русском языке:</p>
+<q lang="ru">
+  Быстрый коричневый лис перепрыгнул через ленивую собаку.
+</q>
 {%endblock%}

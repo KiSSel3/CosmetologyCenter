@@ -1,0 +1,100 @@
+/* Селекторы атрибутов */
+
+input[type="text"]:focus {
+    border: 1px solid red;
+  }
+  
+  input[type="email"]:disabled {
+    opacity: 0.5;
+  }
+  
+  input[type="submit"][value="Отправить"]:disabled {
+    background-color: #ccc;
+  }
+  
+  /* Псевдоклассы */
+  
+  input[type="text"]:focus + label {
+    color: red;
+  }
+  
+  input[type="email"]:invalid {
+    border: 1px solid red;
+  }
+  
+  input[type="submit"][value="Отправить"]:checked {
+    background-color: green;
+  }
+  
+  /* Отображение кавычек в зависимости от языка цитаты */
+  
+  q:lang(en) {
+    quotes: "“" "”";
+  }
+  
+  q:lang(ru) {
+    quotes: "«" "»";
+  }
+  
+  /* Для отображения любого текстового фрагмента настроить: */
+  
+  /* Отступы и поля */
+  
+  p {
+    margin: 10px;
+    padding: 5px;
+  }
+  
+  /* Заголовки (или любой другой фрагмент текста) оформить с помощью text-transform */
+  
+  h1 {
+    text-transform: uppercase;
+  }
+  
+  /* Красную строку */
+  
+  p.indent {
+    text-indent: 20px;
+  }
+  
+  /* Межстрочный интервал */
+  
+  p.line-height {
+    line-height: 2;
+  }
+  
+  /* Любой фрагмент оформить капителью (или использовать расширенные возможности font-variant ) */
+  
+  p.small-caps {
+    font-variant: small-caps;
+  }
+  
+  /* Интервал между словами и символами */
+  
+  p.word-spacing {
+    word-spacing: 10px;
+  }
+  
+  /* Перенос и разрыв слов */
+  
+  p.hyphens {
+    hyphens: auto;
+  }
+  
+  /* Шрифты, выравнивание текста, позиционирование блоков для расположения на странице */
+  
+  p {
+    font-family: sans-serif;
+    text-align: center;
+    position: relative;
+  }
+  
+  h1 {
+    font-family: serif;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  

@@ -1,4 +1,10 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/main/create_review.css'%}"/>
+{% endblock %}
 
 {% block main %}
 <form method="POST" enctype="multipart/form-data">
