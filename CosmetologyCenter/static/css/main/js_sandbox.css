@@ -1,0 +1,9 @@
+table#myTable {
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  
+  table#myTable th,
+  table#myTable td {
+    background-color: white;
+  }

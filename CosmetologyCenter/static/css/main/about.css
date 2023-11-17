@@ -54,8 +54,7 @@ ul {
 }
 
 #contacts {
-    font-family: 'Pixelify Sans', cursive;
-    font-family: 'Young Serif', serif;
+    font-family: 'Pixelify Sans', cursive, 'Young Serif', serif;
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 10px;

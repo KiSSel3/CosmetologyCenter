@@ -13,12 +13,18 @@
     <ul class="services">
         {% for service in services %}
             <li>
-                <img src="{{ service.image.url }}" style="width: 500px; height: 300px;">
-                <h3>{{ service.service_name }}</h3>
-                <p>{{ service.service_type }}</p>
-                <a href="{% url 'services:service-detail' service.id %}">Подробнее</a>
+                <div class="card"> 
+                    <div class="card-item">
+                        <img src="{{ service.image.url }}" style="width: 500px; height: 300px;">
+                        <h3>{{ service.service_name }}</h3>
+                        <p>{{ service.service_type }}</p>
+                        <a href="{% url 'services:service-detail' service.id %}">Подробнее</a>
+                    </div>
+                </div>
             </li>
         {% endfor %}
     </ul>
 </div>
+
+<script src="{% static 'js/card_effect.js'%}"></script>
 {% endblock %}

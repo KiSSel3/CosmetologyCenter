@@ -54,6 +54,10 @@ def privacy_policy(request):
     return render(request, 'main/privacy_policy.html')
 
 
+def js_sandbox(request):
+    return render(request, 'main/js_sandbox.html')
+
+
 def reviews(request):
     logger.info('Method reviews')
 

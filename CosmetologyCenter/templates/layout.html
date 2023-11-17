@@ -18,6 +18,7 @@
     </head>
 
     <body>
+        <div class="progress"></div>
         <aside>
             <ul>
                 <li><a href="{% url 'main:home' %}">Главная</a></li>
@@ -30,13 +31,16 @@
                 <li><a href="{% url 'main:promotional_code' %}">Промокоды</a></li>
                 <li><a href="{% url 'main:vacancies' %}">Вакансии</a></li>
                 <li><a id="sandbox" href="{% url 'main:sandbox' %}">Дополнительно</a></li>
-                <li><a href="{% url 'stats:report' %}">Статистика</a></li>
+                <li><a href="{% url 'main:js_sandbox' %}">Дополнительно JS</a></li>
+                <li><a href="{% url 'stats:report' %}" onclick="return checkAge(event)">Статистика</a></li>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'appointments:appointment_list_for_user' %}">Записи</a></li>
                 <li><a href="{% url 'doctors:logout' %}">Выйти</a></li>
                 {% else %}
                 <li><a href="{% url 'doctors:login'%}?next={{request.path}}">Войти</a></li>
                 {% endif %}
+
+                <div id ="countdown"></div>
             </ul>
         </aside>
 
@@ -55,5 +59,9 @@
                 </nav>
             </div>
         </footer>
+
+         <script src="{% static 'js/progress_bar.js'%}"></script>
+         <script src="{% static 'js/timer.js'%}"></script>
+         <script src="{% static 'js/age.js'%}"></script>
     </body>
 </html>

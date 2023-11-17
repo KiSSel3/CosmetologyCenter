@@ -64,4 +64,27 @@
         </a>
     {% endfor %}
 </div>
+
+<div class="banner" id="banner1">
+    <a href="https://goldapple.ru/" target="_blank"><img width="50%" height="250px" src="../media/images/GoldenApple.png" alt="Баннер Золотое яблоко"></a>
+</div>
+<div class="banner" id="banner2">
+    <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fmila.by%2Freklamnaya-igra%2F&psig=AOvVaw2IeK1ntBulxg4htfk5gWDd&ust=1695718104606000&source=images&cd=vfe&opi=89978449&ved=0CBMQ3YkBahcKEwioot2_sMWBAxU" target="_blank"><img width="50%" height="250px" src="../media/images/Mila.jpg" alt="Баннер Милы"></a>
+</div>
+<form id="rotationForm" {% if not user.is_superuser %}style="display: none;"{% endif %}>
+    <label for="rotationInterval">Интервал ротации (сек):</label>
+    <input  type="number" id="rotationInterval" value="2">
+    <button type="button" id="startRotation">Start Rotation</button>
+    <button type="button" id="stopRotation">Stop Rotation</button>
+</form>
+
+<div class="scroll">
+    <img id="right_woman" src="../media/images/womanRight.png" alt="Woman on the right">
+    <img id="left_woman" src="../media/images/womanLeft.png" alt="Woman on the left">
+    <img id="bottom_woman" src="../media/images/womanBottom.png" alt="Woman on the bottom">
+    <img id="center_woman" src="../media/images/womanCenter.png" alt="Woman in the center">
+</div>
+  
+<script src="{% static 'js/banner.js'%}"></script>
+<script src="{% static 'js/animation_scroll.js'%}"></script>
 {% endblock %}

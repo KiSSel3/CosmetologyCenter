@@ -114,3 +114,13 @@ footer a:hover {
 #sandbox {
     cursor: default;
 }
+
+.progress{
+    z-index: 4;
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 0%;
+    height: 5px;
+    background-color: #3e3e3e;
+}

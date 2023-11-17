@@ -34,7 +34,7 @@
         <tr class="total">
             <td>Total</td>
             <td colspan="5"></td>
-            <td class="num">
+            <td class="num total_price">
                 ${{ cart.get_total_price|floatformat:"2" }}
             </td>
         </tr>
@@ -46,6 +46,10 @@
     {% csrf_token %}
     <button type="button" id="ageConfirmationButton">Записаться</button>
 </form>
+
+<input type="number" id="dob">
+<button onclick="applyPromo()">Применить скидку</button>
+<script src="{% static 'js/promo.js'%}"></script>
 
 <script>
     document.getElementById("ageConfirmationButton").addEventListener("click", function () {
